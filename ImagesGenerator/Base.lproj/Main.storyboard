@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImagesGenerator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,108 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Soe-fq-np5">
+                                <rect key="frame" x="144" y="28" width="312" height="312"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="312" id="8iU-PY-Zfa"/>
+                                    <constraint firstAttribute="width" constant="312" id="xi2-27-SdS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ff5b37" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oY3-Tp-y3h">
+                                <rect key="frame" x="20" y="369" width="120" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="jld-SP-jr2"/>
+                                    <constraint firstAttribute="height" constant="30" id="yoe-6a-I5W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dataChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="d7z-uj-DgT"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="fb2b69" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kuD-GK-kH2">
+                                <rect key="frame" x="460" y="369" width="120" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cD2-kF-uRu"/>
+                                    <constraint firstAttribute="width" constant="120" id="kiG-IA-z7L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dataChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="OcI-BJ-neh"/>
+                                </connections>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Vly-vc-zJS">
+                                <rect key="frame" x="18" y="412" width="564" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Tfk-nd-hZR"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sizeSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="HPl-uz-mP6"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cel-7y-Fle">
+                                <rect key="frame" x="278" y="450" width="45" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Export"/>
+                                <connections>
+                                    <action selector="export:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IxS-7S-fBd"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="7" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3a2-vA-38C">
+                                <rect key="frame" x="252" y="369" width="97" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="OZG-6s-fFH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dataChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="m3J-mu-l4r"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cel-7y-Fle" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0DP-zI-Z4g"/>
+                            <constraint firstItem="Cel-7y-Fle" firstAttribute="top" secondItem="Vly-vc-zJS" secondAttribute="bottom" constant="8" id="9HR-zQ-eBj"/>
+                            <constraint firstItem="Vly-vc-zJS" firstAttribute="trailing" secondItem="kuD-GK-kH2" secondAttribute="trailing" id="A1p-0S-LiL"/>
+                            <constraint firstItem="Vly-vc-zJS" firstAttribute="top" secondItem="3a2-vA-38C" secondAttribute="bottom" constant="13" id="Avz-uh-AoU"/>
+                            <constraint firstItem="3a2-vA-38C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Glq-3M-ANG"/>
+                            <constraint firstItem="3a2-vA-38C" firstAttribute="baseline" secondItem="kuD-GK-kH2" secondAttribute="baseline" id="Iu3-rP-4PM"/>
+                            <constraint firstItem="oY3-Tp-y3h" firstAttribute="baseline" secondItem="3a2-vA-38C" secondAttribute="baseline" id="MRj-sd-2HW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kuD-GK-kH2" secondAttribute="trailing" id="OwL-eg-z8h"/>
+                            <constraint firstItem="Vly-vc-zJS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wdl-K6-Nok"/>
+                            <constraint firstItem="Vly-vc-zJS" firstAttribute="leading" secondItem="oY3-Tp-y3h" secondAttribute="leading" id="aba-cQ-XrW"/>
+                            <constraint firstItem="Soe-fq-np5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eEc-5L-RR4"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="oY3-Tp-y3h" secondAttribute="leading" id="gVe-6N-IDL"/>
+                            <constraint firstItem="Soe-fq-np5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ku3-0e-ff9"/>
+                            <constraint firstItem="oY3-Tp-y3h" firstAttribute="top" secondItem="Soe-fq-np5" secondAttribute="bottom" constant="29" id="rxl-sx-JAr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="circleView" destination="Soe-fq-np5" id="41s-Y7-7V9"/>
+                        <outlet property="color1TextField" destination="oY3-Tp-y3h" id="T31-19-yXZ"/>
+                        <outlet property="color2TextField" destination="kuD-GK-kH2" id="dw4-PO-5Q8"/>
+                        <outlet property="lineWidthTextField" destination="3a2-vA-38C" id="VpF-zk-d0X"/>
+                        <outlet property="sizeSlider" destination="Vly-vc-zJS" id="8RH-73-f82"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="233" y="389"/>
         </scene>
     </scenes>
 </document>
